@@ -9,7 +9,7 @@ app.use(bodyParser());
 
 
 app.use(async (ctx) => {
-  if (ctx.path === '/mutate' && ctx.method === 'POST') {
+  if (ctx.method === 'POST') {
     const admissionRequest: AdmissionReviewRequest = ctx.body;
 
     // Extract relevant information from admissionRequest
@@ -32,7 +32,7 @@ app.use(async (ctx) => {
     };
 
     ctx.body = admissionResponse;
-    ctx.status = 200;
+    ctx.status = 403;
   } else {
     ctx.status = 404;
     ctx.body = 'Not found';

@@ -13,7 +13,8 @@ webhooks:
   clientConfig:
     service:
       namespace: "default"
-      name: "test-service"
+      name: "test-server"
+      port: 8080
     # caBundle: <CA_BUNDLE>
   admissionReviewVersions: ["v1"]
   sideEffects: None
